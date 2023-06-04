@@ -1,0 +1,17 @@
+LXI H, 0850H
+MOV A,M
+MVI C, 15
+MVI D,6
+
+loop: CMP D
+JC final
+INX H
+DCR C
+MOV A,M
+JNZ loop
+
+MVI A,FFH
+STA 0860H
+
+final: STA 0860H
+HLT
