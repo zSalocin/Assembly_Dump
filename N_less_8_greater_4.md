@@ -1,7 +1,7 @@
 LXI H, 0850H
 MOV A,M
 MVI B, 5
-MVI D,7
+MVI D,8
 MVI C, 15
 
 loop: CMP D
