@@ -1,0 +1,28 @@
+LXI H, 0850H
+MVI A, 1
+MVI D, 0
+MOV B, M
+
+CMP B
+JZ in
+JNC in
+start: MVI A, 0 
+MOV C, B
+DCR C
+multi: ADD B
+DCR C
+JNZ multi
+ADD D
+MOV D, A
+MVI A, 1
+DCR B
+CMP B
+JZ start
+
+MOV A, D
+STA 0860H
+HLT
+
+in: MVI A, FFH
+STA 0860H
+HLT

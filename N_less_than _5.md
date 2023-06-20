@@ -1,0 +1,22 @@
+LXI H, 0850H
+MOV A,M
+MVI B, 5
+MVI C, 15
+MVI D, 0
+
+loop: CMP B
+JC in
+INX H
+DCR C
+MOV A,M
+JNZ loop
+
+in: INR D
+INX H
+DCR C
+MOV A,M
+JNZ loop
+
+MOV A,D
+STA 0860H
+HLT
